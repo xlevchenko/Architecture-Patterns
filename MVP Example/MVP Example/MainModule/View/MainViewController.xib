@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="MVP_Example" customModuleProvider="target">
             <connections>
-                <outlet property="greetingLabel" destination="Eu5-ww-fy2" id="djG-jq-TD8"/>
+                <outlet property="tableView" destination="1ZJ-9Y-jst" id="1HA-Ez-L3d"/>
                 <outlet property="view" destination="iN0-l3-epB" id="SyP-fa-QFV"/>
             </connections>
         </placeholder>
@@ -19,29 +19,31 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eu5-ww-fy2">
-                    <rect key="frame" x="101" y="346" width="212" height="72"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45n-Ik-QQc">
-                    <rect key="frame" x="103" y="457" width="208" height="60"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1ZJ-9Y-jst">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="separatorColor" systemColor="secondarySystemBackgroundColor"/>
                     <connections>
-                        <action selector="didTapButton:" destination="-1" eventType="touchUpInside" id="6Ty-TP-pb3"/>
+                        <outlet property="dataSource" destination="-1" id="KQh-dc-5lu"/>
+                        <outlet property="delegate" destination="-1" id="25W-ol-dDN"/>
                     </connections>
-                </button>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="1ZJ-9Y-jst" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="07C-VW-eES"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1ZJ-9Y-jst" secondAttribute="trailing" id="1wa-Au-xPx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1ZJ-9Y-jst" secondAttribute="bottom" id="KN6-FZ-2Ox"/>
+                <constraint firstItem="1ZJ-9Y-jst" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="slB-5N-ggs"/>
+            </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
