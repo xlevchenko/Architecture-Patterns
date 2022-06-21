@@ -18,6 +18,10 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         presentor.setComment()
     }
+    
+    @IBAction func tapAction(_ sender: Any) {
+        presentor.tap()
+    }
 }
 
 

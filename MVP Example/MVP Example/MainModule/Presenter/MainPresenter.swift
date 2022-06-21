@@ -7,28 +7,29 @@
 
 import Foundation
 
-protocol MainViewProtocol: class {
+protocol MainViewProtocol: AnyObject {
     func succes()
     func failure(error: Error)
 }
 
-protocol MainViewPresenterProtocol: class {
-    init(view: MainViewProtocol, networlService: NetworkServiceProtocol)
+protocol MainViewPresenterProtocol: AnyObject {
+    init(view: MainViewProtocol, networlService: NetworkServiceProtocol, router: RouterProtocol)
     func getComments()
     var comments: [Comment]? { get set }
+    func tapOnTheComment(comment: Comment?)
 }
 
 
 class MainPresenter: MainViewPresenterProtocol {
-    
-    
     weak var view: MainViewProtocol?
+    var router: RouterProtocol?
     let networkService: NetworkServiceProtocol!
     var comments: [Comment]?
     
-    required init(view: MainViewProtocol, networlService: NetworkServiceProtocol) {
+    required init(view: MainViewProtocol, networlService: NetworkServiceProtocol, router: RouterProtocol) {
         self.view = view
         self.networkService = networlService
+        self.router = router
         getComments()
     }
     
@@ -46,6 +47,8 @@ class MainPresenter: MainViewPresenterProtocol {
             }
         }
     }
-    
+    func tapOnTheComment(comment: Comment?) {
+        router?.showDitail(comment: comment)
+    }
 }
 
